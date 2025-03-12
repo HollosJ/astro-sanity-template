@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { sanityClient } from 'sanity:client';
+import { urlFor } from '../../sanity';
+import Image from 'astro/components/Image.astro';
+
+const data = await sanityClient.fetch('*[_type == "homePage"][0]');
+
+const { title, subtitle, coverImage } = data.hero;
+---
+
+<Layout title="Test title" description="Test description">
+  <header
+    class="py-16 md:py-36 bg-gradient-to-tr from-red-500 to-red-900 text-white relative"
+  >
+    <!-- Background image -->
+    <Image
+      src={urlFor(coverImage).url()}
+      alt={title}
+      width={1920}
+      height={1080}
+      format="webp"
+      loading="eager"
+      quality={80}
+      class={'absolute inset-0 w-full h-full object-cover opacity-25'}
+    />
+
+    <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl text-white">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">{title}</h1>
+
+        <p class="text-xl md:text-2xl mb-8">
+          {subtitle}
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-16 md:py-24">
+    <div class="container">
+      <h2 class="text-4xl font-bold">About Me</h2>
+      <p class="text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+        Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies
+        sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius
+        a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy
+        molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
+        Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium
+        a, enim. Pellentesque convallis. Maecenas feugiat, tellus pellentesque
+        pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel
+        felis. Mauris eleifend pellentesque nisi. Quisque id justo sit amet
+        sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus
+        orci luctus et ultrices posuere
+      </p>
+    </div>
+  </main>
+</Layout>

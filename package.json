@@ -1,0 +1,17 @@
+{
+  "name": "astro-sanity-template",
+  "version": "1.0.0",
+  "description": "Base template for an Astro site using Sanity CMS",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=astro-app\" \"npm run dev --workspace=sanity\""
+  },
+  "workspaces": [
+    "astro-app",
+    "sanity"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "author": "James Hollos",
+  "license": "ISC"
+}
