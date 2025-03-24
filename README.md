@@ -1,6 +1,6 @@
-# Astro Sanity Template
+# Astro Sanity Monorepo Template
 
-This is a super simple Astro Sanity template. It's a starter template for Astro Sanity projects.
+This is a super simple Astro Sanity monorepo template. It's a starter template for Astro Sanity projects.
 
 **Astro v5.2** | **Tailwind v4** | **Sanity v3.79**
 
