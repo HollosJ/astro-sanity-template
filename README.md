@@ -6,7 +6,7 @@ This is a super simple Astro Sanity monorepo template. It's a starter template f
 
 ## Installation
 
-The project uses [npm workspaces](https://docs.npmjs.com/cli/v9/using-npm/workspaces) to manage the two subrepositories. At the root level, running the following command will install the dependencies for both subrepositories: `astro-app` and `sanity`.
+The project uses [npm workspaces](https://docs.npmjs.com/cli/v9/using-npm/workspaces) to manage the two subrepositories, and [concurrently](https://www.npmjs.com/package/concurrently). At the root level, running the following command will install the dependencies for both subrepositories: `astro-app` and `sanity`.
 
 ```
 npm install
