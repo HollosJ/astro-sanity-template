@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { sanityClient } from 'sanity:client';
-import { urlFor } from '../../sanity';
-import Image from 'astro/components/Image.astro';
+import Layout from "../layouts/Layout.astro";
+import { sanityClient } from "sanity:client";
+import { urlFor } from "../../sanity";
+import Image from "astro/components/Image.astro";
 
 const data = await sanityClient.fetch('*[_type == "homePage"][0]');
 
@@ -11,7 +11,7 @@ const { title, subtitle, coverImage } = data.hero;
 
 <Layout title="Test title" description="Test description">
   <header
-    class="py-16 md:py-36 bg-gradient-to-tr from-red-500 to-red-900 text-white relative"
+    class="relative bg-gradient-to-tr from-red-500 to-red-900 py-16 text-white md:py-36"
   >
     <!-- Background image -->
     <Image
@@ -22,14 +22,14 @@ const { title, subtitle, coverImage } = data.hero;
       format="webp"
       loading="eager"
       quality={80}
-      class={'absolute inset-0 w-full h-full object-cover opacity-25'}
+      class={"absolute inset-0 w-full h-full object-cover opacity-25"}
     />
 
-    <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl text-white">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">{title}</h1>
+        <h1 class="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">{title}</h1>
 
-        <p class="text-xl md:text-2xl mb-8">
+        <p class="mb-8 text-xl md:text-2xl">
           {subtitle}
         </p>
       </div>

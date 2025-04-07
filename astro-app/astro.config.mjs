@@ -1,9 +1,9 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from "@tailwindcss/vite";
 
-import sanity from '@sanity/astro';
+import sanity from "@sanity/astro";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,8 +13,8 @@ export default defineConfig({
 
   integrations: [
     sanity({
-      projectId: '<project-id>',
-      dataset: 'production',
+      projectId: "<project-id>",
+      dataset: "production",
       useCdn: false, // false if building statically
     }),
   ],
